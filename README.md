@@ -33,5 +33,17 @@
 
 ### Vite https://vitejs.dev/
 
-npm run dev
+`npm run dev`
 open localhost link from command terminal
+
+## Prettier https://prettier.io/
+
+## ESLint https://eslint.org/
+
+## Lint-Staged & Husky
+
+## Jest
+
+## Babel
+
+## Cypress
