@@ -2,6 +2,8 @@
 
 [![Automated E2E Testing](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml/badge.svg)](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml)
 [![Automated E2E Testing](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml/badge.svg)](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml)
+[![Deploy static content to Pages](https://github.com/andjhay/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/andjhay/social-media-client/actions/workflows/pages.yml)
+[![Deploy static content to Pages](https://github.com/andjhay/social-media-client/actions/workflows/static.yml/badge.svg?branch=workflow)](https://github.com/andjhay/social-media-client/actions/workflows/static.yml)
 
 The following workflows/hooks are required:
 
@@ -13,7 +15,7 @@ The following workflows/hooks are required:
 The following file changes are required:
 
 - [ ] Project readme file is updated to include new configuration information and status badges
-- [ ] Project is configured for hosting (e.g. CDN links or a Bundler)
+- [x] Project is configured for hosting (e.g. CDN links or a Bundler)
 
 The following features must be automatically tested with unit tests:
 
