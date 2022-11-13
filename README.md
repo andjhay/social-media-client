@@ -29,21 +29,36 @@
 - [x] The create item form validates user inputs correctly based on API restrictions
 - [x] The logout button logs the user out when clicked
 
-## Dependencies
+## Dependencies to Install
 
 ### Vite https://vitejs.dev/
 
+`npm install -D vite`
+
 `npm run dev`
-open localhost link from command terminal
 
-## Prettier https://prettier.io/
+<p>open localhost link from command terminal</p>
 
-## ESLint https://eslint.org/
+### Prettier https://prettier.io/
 
-## Lint-Staged & Husky
+`npm install --save-dev prettier`
 
-## Jest
+### ESLint https://eslint.org/
 
-## Babel
+`npm install eslint --save-dev`
 
-## Cypress
+### Jest
+
+`npm i -D jest`
+then
+`npm run test-unit`
+
+### Babel
+
+`npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4`
+
+### Cypress
+
+`npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1`
+then
+`npm run test-e2e`
