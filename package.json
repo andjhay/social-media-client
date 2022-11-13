@@ -15,12 +15,12 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "format": "prettier -w *.js",
+    "format": "prettier -w *.js & prettier -w *.html",
     "lint": "eslint *.js",
     "lint-fix": "eslint *.js --cache --fix",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
-    "test": "npm run test-e2e",
+    "test": "npm run test-e2e & npm run test-unit",
     "test-unit": "jest",
     "test-e2e": "cypress open"
   },
