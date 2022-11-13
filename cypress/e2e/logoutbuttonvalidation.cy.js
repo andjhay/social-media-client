@@ -25,7 +25,7 @@ describe("Login", () => {
       .contains("Login")
       .should("be.visible")
       .click()
-      .wait(500);
+      .wait(2000);
   });
 
   it("is Logged in", () => {});

@@ -60,7 +60,7 @@ describe("Test with correct Authentication", () => {
       .contains("Login")
       .should("be.visible")
       .click()
-      .wait(500);
+      .wait(2000);
   });
 
   it("Can login", () => {

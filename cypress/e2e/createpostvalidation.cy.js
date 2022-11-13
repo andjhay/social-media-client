@@ -4,10 +4,11 @@ const testingPass = "12345678";
 const testTitle = "Testing Cypress";
 const testBody = "Testing Cypress";
 const testTags = "testing cypress";
-const testMedia = "Testing Cypress";
+const testMedia =
+  "https://cdn.shopify.com/s/files/1/0533/2089/files/img-url-filter.jpg";
 
 describe("Create Post", () => {
-  it("login", () => {
+  it("login and create post", () => {
     cy.visit("/");
     cy.clearLocalStorage();
     cy.get("#registerModal button")
@@ -31,12 +32,12 @@ describe("Create Post", () => {
       .should("be.visible")
       .click()
       .wait(2000);
-    cy.get("footer a").contains("New Post").wait(500).click();
+    cy.get("footer a").contains("New Post").wait(1000).click().wait(1000);
     cy.get("#postTitle").should("exist").type(testTitle, { delay: 50 });
     cy.get("#postBody").should("exist").type(testBody, { delay: 50 });
     cy.get("#postTags").should("exist").type(testTags, { delay: 50 });
     cy.get("#postMedia").should("exist").type(testMedia, { delay: 50 });
-    cy.get("#postForm div button [type='submit']")
+    cy.get("button[data-action='submit']")
       .should("exist")
       .click({ force: true });
   });
