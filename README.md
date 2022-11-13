@@ -1,5 +1,8 @@
 # Workflow
 
+[![Automated E2E Testing](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml/badge.svg)](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml)
+[![Automated E2E Testing](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml/badge.svg)](https://github.com/andjhay/social-media-client/actions/workflows/e2e-testing.yml)
+
 The following workflows/hooks are required:
 
 - [x] Project is configured to run Prettier on commit
