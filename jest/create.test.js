@@ -17,6 +17,15 @@ function fetchSuccess() {
   });
 }
 
+// mock fail fetch function
+function fetchFail() {
+  return Promise.resolve({
+    ok: false,
+    status: 404,
+    statusText: "Failed To Create",
+  });
+}
+
 // mock localstorage
 
 class LocalStorageMock {
@@ -57,4 +66,11 @@ test("item is created", async () => {
     mockMedia,
     mockTags,
   });
+});
+
+test("item creation failed", async () => {
+  global.fetch = jest.fn(() => fetchFail());
+  await expect(() =>
+    createPost(mockTitle, mockBody, mockMedia, mockTags)
+  ).rejects.toThrow("Failed To Create");
 });

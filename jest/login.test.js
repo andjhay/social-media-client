@@ -2,9 +2,9 @@
 
 import { login } from "../src/js/api/auth/login.js";
 
-const TEST_EMAIL = "test@noroff.no";
-const TEST_PASSWORD = "1234";
-const TEST_TOKEN = "Auth1234";
+const testEmail = "test@noroff.no";
+const testPassword = "1234";
+const expectedToken = "Auth1234";
 
 // mock success fetch function
 function fetchSuccess() {
@@ -12,7 +12,16 @@ function fetchSuccess() {
     ok: true,
     status: 200,
     statusText: "OK",
-    json: () => Promise.resolve(TEST_TOKEN),
+    json: () => Promise.resolve(expectedToken),
+  });
+}
+
+// mock fail fetch function
+function fetchFail() {
+  return Promise.resolve({
+    ok: false,
+    status: 404,
+    statusText: "Invalid Login",
   });
 }
 
@@ -44,6 +53,13 @@ global.localStorage = new LocalStorageMock();
 
 test("Returns a valid auth token when provided with a valid login", async () => {
   global.fetch = jest.fn(() => fetchSuccess());
-  const token = await login(TEST_EMAIL, TEST_PASSWORD);
-  expect(token).toEqual(TEST_TOKEN);
+  const response = await login(testEmail, testPassword);
+  expect(response).toEqual(expectedToken);
+});
+
+test("Throws error when provided with a invalid login", async () => {
+  global.fetch = jest.fn(() => fetchFail());
+  await expect(() => login(testEmail, testPassword)).rejects.toThrow(
+    "Invalid Login"
+  );
 });
